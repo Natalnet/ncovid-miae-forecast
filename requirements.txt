@@ -1,0 +1,14 @@
+Flask
+pandas
+matplotlib
+sklearn
+json
+flask
+torch 
+torchvision 
+torchaudio
+numpy
+datetime
+random
+uiid
+sys
