@@ -1,0 +1,89 @@
+{
+    "da0947c0-02c3-11ed-844e-57b801a91be2": {
+        "instance_id": "da0947c0-02c3-11ed-844e-57b801a91be2",
+        "score": 37.56967089958457,
+        "model_category": "miae",
+        "model_type": "type2",
+        "data_of_training": "2022-07-13 12:52:52",
+        "data_infos": {
+            "path": "brl:rn",
+            "repo": "p971074907",
+            "data_begin_date": "2020-06-01",
+            "data_end_date": "2020-7-09",
+            "inputFeatures": "date:newDeaths",
+            "inputWindowSize": 7
+        },
+        "params": {
+            "inseqlen": 7,
+            "outseqlen": 7,
+            "growth": 4,
+            "latent_space_dim": 7,
+            "n_features": 1,
+            "n_targets": 1,
+            "activation": "ReLU",
+            "epochs": 10,
+            "seed": 51,
+            "learning_rate": 0.0005,
+            "optimizerFunction": "Adam",
+            "lossFunction": "RMSE"
+        }
+    },
+    "da09d7b2-02c3-11ed-844e-57b801a91be2": {
+        "instance_id": "da09d7b2-02c3-11ed-844e-57b801a91be2",
+        "score": 38.58502402240381,
+        "model_category": "miae",
+        "model_type": "type2",
+        "data_of_training": "2022-07-13 12:52:52",
+        "data_infos": {
+            "path": "brl:rn",
+            "repo": "p971074907",
+            "data_begin_date": "2020-06-01",
+            "data_end_date": "2020-7-09",
+            "inputFeatures": "date:newDeaths",
+            "inputWindowSize": 7
+        },
+        "params": {
+            "inseqlen": 7,
+            "outseqlen": 7,
+            "growth": 4,
+            "latent_space_dim": 7,
+            "n_features": 1,
+            "n_targets": 1,
+            "activation": "ReLU",
+            "epochs": 10,
+            "seed": 41,
+            "learning_rate": 0.0005,
+            "optimizerFunction": "Adam",
+            "lossFunction": "RMSE"
+        }
+    },
+    "da0a45e4-02c3-11ed-844e-57b801a91be2": {
+        "instance_id": "da0a45e4-02c3-11ed-844e-57b801a91be2",
+        "score": 36.13181758475867,
+        "model_category": "miae",
+        "model_type": "type2",
+        "data_of_training": "2022-07-13 12:52:52",
+        "data_infos": {
+            "path": "brl:rn",
+            "repo": "p971074907",
+            "data_begin_date": "2020-06-01",
+            "data_end_date": "2020-7-09",
+            "inputFeatures": "date:newDeaths",
+            "inputWindowSize": 7
+        },
+        "params": {
+            "inseqlen": 7,
+            "outseqlen": 7,
+            "growth": 4,
+            "latent_space_dim": 7,
+            "n_features": 1,
+            "n_targets": 1,
+            "activation": "ReLU",
+            "epochs": 10,
+            "seed": 15,
+            "learning_rate": 0.0005,
+            "optimizerFunction": "Adam",
+            "lossFunction": "RMSE"
+        }
+    }
+}

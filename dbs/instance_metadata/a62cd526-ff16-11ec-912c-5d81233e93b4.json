@@ -1,0 +1,29 @@
+{
+    "instance_id": "a62cd526-ff16-11ec-912c-5d81233e93b4",
+    "score": 29.74505377069684,
+    "model_category": "miae",
+    "model_type": "type1",
+    "data_of_training": "2022-07-08 20:35:28",
+    "data_infos": {
+        "path": "brl:rn",
+        "repo": "p971074907",
+        "data_begin_date": "2020-01-01",
+        "data_end_date": "2020-08-15",
+        "inputFeatures": "date:newDeaths:newCases",
+        "inputWindowSize": "7"
+    },
+    "params": {
+        "inseqlen": 7,
+        "outseqlen": 7,
+        "growth": 4,
+        "latent_space_dim": 7,
+        "n_features": 1,
+        "n_targets": 1,
+        "activation": "ReLU",
+        "epochs": 100,
+        "seed": 51,
+        "learning_rate": 0.0005,
+        "optimizerFunction": "Adam",
+        "lossFunction": "RMSE"
+    }
+}
