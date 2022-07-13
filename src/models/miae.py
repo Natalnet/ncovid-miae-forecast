@@ -144,8 +144,8 @@ class MIAE(nn.Module):
         self.save_model_metadata_json()
         torch.save(self.parameters, model_path_to_save + self.model_id + ".pth")
 
-    def save_model_metadata_json(self):
-        metadata_file_dict = {
+    def _gen_model_metada(self):
+        metadata_dict = {
             "instance_id": self.model_id,
             "score": self.score,
             "model_category": "miae",
@@ -161,6 +161,10 @@ class MIAE(nn.Module):
             },
             "params": self.model_hyperparameters,
         }
+        return metadata_dict
+
+    def save_model_metadata_json(self):
+        metadata_file_dict = self._gen_model_metada()
         with open(
             configures_manner.metadata_path + str(self.model_id) + ".json",
             "w",
