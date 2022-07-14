@@ -4,8 +4,17 @@ sys.path.append("../src")
 
 from data_preparation import DataPreparation
 from models.miae_type1 import MIAET1, RMSELoss
-import matplotlib.pyplot as plt
-import torch
+import configures_manner
+
+data_infos = {
+    "repo": "p971074907",
+    "path": "brl:rn",
+    "inputFeatures": "date:newDeaths",
+    "inputWindowSize": "7",
+    "begin": "2020-03-13",
+    "end": "2020-07-15",
+}
+configures_manner.add_all_configures_to_globals(data_infos)
 
 repo = "p971074907"
 path = "brl:rn"
@@ -21,7 +30,7 @@ forward_len = 7
 data_instance.data_tensor_generate(forward_len)
 
 prct_to_train = 0.7
-data_instance.train_test_split(prct_to_train)
+data_instance.train_test_split_by_percent(prct_to_train)
 
 batch_s = 8
 data_instance.dataloader_create(batch_s)

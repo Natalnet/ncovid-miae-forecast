@@ -2,8 +2,10 @@ import sys
 
 sys.path.append("../src")
 
+import torch
+import torch.nn as nn
+from models.autoencoder import AutoEncoder, RMSELoss
 from data_preparation import DataPreparation
-from models.miae_type2 import MIAET2, RMSELoss
 import configures_manner
 
 data_infos = {
@@ -30,40 +32,33 @@ forward_len = 7
 data_instance.data_tensor_generate(forward_len)
 
 prct_to_train = 0.7
-data_instance.train_test_split(prct_to_train)
+data_instance.train_test_split_by_percent(prct_to_train)
 
 batch_s = 8
 data_instance.dataloader_create(batch_s)
-data_instance.data_split_by_feature()
-
-features = data_instance.input_features
-targets_features = [data_instance.targets_features]
-# Window lenght for the input data
-input_window = data_instance.window_size
-# Desire prediction output lenght
 
 model_hyperparameters = {
-    "inseqlen": input_window,
-    "outseqlen": forward_len,
+    "inseqlen": 7,
+    "outseqlen": 7,
     "growth": 4,
     "latent_space_dim": 7,
-    "n_features": len(features),
-    "n_targets": len(targets_features),
+    "n_features": 1,
+    "n_targets": 1,
+    "ae_archtecture_list": [20, 30, 50],
     "activation": "ReLU",
     "epochs": 100,
     "seed": 51,
     "learning_rate": 0.0005,
-    "loss_function": RMSELoss(),
 }
 
-model = MIAET2(model_hyperparameters)
-
-model.train(data_instance, validation=True)
+model = AutoEncoder(model_hyperparameters)
+model.train(data_instance)
 print("Model Trained")
 
 to_predict = data_instance.X_test
 pred = model.predicting(to_predict)
 
+model.save_model()
 ytrue = data_instance.Y_test
 yhat = pred
 

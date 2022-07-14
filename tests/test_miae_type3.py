@@ -4,8 +4,17 @@ sys.path.append("../src")
 
 from data_preparation import DataPreparation
 from models.miae_type3 import MIAET3, RMSELoss
-import matplotlib.pyplot as plt
-import torch
+import configures_manner
+
+data_infos = {
+    "repo": "p971074907",
+    "path": "brl:rn",
+    "inputFeatures": "date:newDeaths",
+    "inputWindowSize": "7",
+    "begin": "2020-03-13",
+    "end": "2020-07-15",
+}
+configures_manner.add_all_configures_to_globals(data_infos)
 
 repo = "p971074907"
 path = "brl:rn"
