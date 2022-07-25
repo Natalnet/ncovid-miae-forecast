@@ -48,6 +48,7 @@ class Predictor:
         data_obj.outseqlen = self.model_hyperparameters["outseqlen"]
         data_obj.inseqlen = self.model_hyperparameters["inseqlen"]
         data_obj.data_to_test_create()
+        self.data_instance = data_obj
         return data_obj.data_to_test
 
     def predict(self, data_to_predict):

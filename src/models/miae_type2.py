@@ -16,9 +16,6 @@ class MIAET2(MIAE):
         if self.seed:
             self.fix_seed(self.seed)
 
-        self.autoencoders_init()
-        self.generate_autoencoders()
-        self.generate_predictors()
         self.model_type = "type2"
 
     def train(self, data_instance: DataPreparation, validation: bool = True):
@@ -42,7 +39,7 @@ class MIAET2(MIAE):
                 forward_output = self.forward(inputs)
 
                 loss = self.loss_calculation(batch, forward_output)
-                self._weights_adjustment(loss)
+                self.weights_adjustment(loss)
 
             self.loss_train.append(loss.item())
 
@@ -82,10 +79,10 @@ class MIAET2(MIAE):
 
                 forward_output = self.forward(inputs_validation)
 
-                loss_validation = self.loss_validation_calculation(
+                loss_ = self.loss_validation_calculation(
                     batch_validation, forward_output
                 )
-        return loss_validation
+        return loss_
 
     def loss_calculation(self, batch_validation, forward_output):
         inputs, targets = batch_validation

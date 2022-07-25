@@ -14,9 +14,6 @@ class MIAET3(MIAET2):
         if self.seed:
             self.fix_seed(self.seed)
 
-        self.autoencoders_init()
-        self.generate_autoencoders()
-        self.generate_predictors()
         self.model_type = "type3"
 
     def train(self, data_instance: DataPreparation, validation: bool = True):

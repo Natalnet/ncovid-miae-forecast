@@ -131,7 +131,7 @@ class MIAE(nn.Module):
             )
         return torch.stack(predict_batch)
 
-    def _weights_adjustment(self, loss):
+    def weights_adjustment(self, loss):
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()

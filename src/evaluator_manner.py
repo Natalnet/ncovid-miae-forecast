@@ -44,7 +44,7 @@ class Evaluator:
             models_metadatas_to_save[
                 model_metadata_dict["instance_id"]
             ] = model_metadata_dict
-        # print(models_metadatas_to_save)
+
         self.save_search_json(models_metadatas_to_save)
 
     def gen_data_to_train(self):
@@ -54,7 +54,7 @@ class Evaluator:
             configures_manner.repo,
             configures_manner.path,
             configures_manner.inputFeatures,
-            configures_manner.inputWindowSize,
+            self.model.inseqlen,
             configures_manner.begin,
             configures_manner.end,
         )
