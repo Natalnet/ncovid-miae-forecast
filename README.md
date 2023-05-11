@@ -1,5 +1,5 @@
 # ncovid-baseline-forecast
-Source-code for the baseline forecast container of ncovid system
+Source-code for the Multivariate Independent Auto-Encoder forecast container of ncovid system
 
 This code runs on Python 3.7
 
